@@ -36,35 +36,47 @@ footer {
 header,
 footer {
   height: 70px;
-}
-header {
+  opacity: 0.8;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: fixed;
-  top: 0px;
   z-index: 99999;
+  background-color: #f5e1f3;
+}
+header {
+  top: 0px;
 }
 main {
   flex: 1;
   gap: 10px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
   z-index: 2;
-  padding: 130px 20px;
+  padding: 70px 20px;
+  border: 1px solid red;
+}
+.score-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+.scores-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+  padding: 10px;
 }
 footer {
   font-size: 1rem;
-  font-weight: 540;
+  font-weight: 400;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
   gap: 5px;
-  position: fixed;
   bottom: 0px;
-  z-index: 999999;
 }
 footer .contact-icons {
   display: flex;
