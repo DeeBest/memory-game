@@ -45,6 +45,15 @@ header {
   top: 0px;
   z-index: 99999;
 }
+main {
+  flex: 1;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  z-index: 2;
+  padding: 130px 20px;
+}
 footer {
   font-size: 1rem;
   font-weight: 540;
