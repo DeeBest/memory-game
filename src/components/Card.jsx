@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-const Card = ({ character }) => {
+const Card = ({ character, handleCardClick }) => {
   return (
-    <li key={character.id}>
+    <li className="card" onClick={handleCardClick}>
       <h2>{character.name}</h2>
-      <p>{character.jutsu}</p>
       {character.images.map((image, index) => (
         <img key={index} src={image} alt={character.name} />
       ))}
