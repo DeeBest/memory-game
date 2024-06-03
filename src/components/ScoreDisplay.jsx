@@ -1,9 +1,9 @@
-const ScoreDisplay = () => {
+const ScoreDisplay = ({ score, highScore }) => {
   return (
     <div className="score-display-container">
       <div className="scores-display">
-        <span>Highest Score: 10</span>
-        <span>Current Score: 5</span>
+        <span>Highest Score: {highScore}</span>
+        <span>Current Score: {score / 2}</span>
       </div>
       <div className="results-display">
         <h3>You Win!</h3>
