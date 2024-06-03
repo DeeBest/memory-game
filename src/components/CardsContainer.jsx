@@ -3,7 +3,12 @@
 
 import Card from './Card';
 
-const CardsContainer = ({ characters, selectedCards, handleCardClick }) => {
+const CardsContainer = ({
+  characters,
+  selectedCards,
+  handleCardClick,
+  addClickedImages,
+}) => {
   return (
     <ul className="cards-list">
       {selectedCards.map((character) => (
@@ -11,6 +16,7 @@ const CardsContainer = ({ characters, selectedCards, handleCardClick }) => {
           key={character.id}
           character={character}
           handleCardClick={handleCardClick}
+          addClickedImages={addClickedImages}
         />
       ))}
     </ul>

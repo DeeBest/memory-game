@@ -5,6 +5,7 @@ import ScoreDisplay from './ScoreDisplay';
 const Main = () => {
   const [characters, setCharacters] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [clickedImages, setClickedImages] = useState([]);
 
   const shuffleCards = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -15,7 +16,7 @@ const Main = () => {
 
   const displayRandomCards = () => {
     shuffleCards(characters);
-    const selected = characters.slice(0, 12);
+    const selected = characters.slice(0, 6);
     setSelectedCards(selected);
   };
 
@@ -44,6 +45,15 @@ const Main = () => {
     displayRandomCards();
   };
 
+  const addClickedImages = (id) => {
+    if (!clickedImages.includes(id)) {
+      setClickedImages([...clickedImages, id]);
+      console.log(clickedImages);
+    } else {
+      console.log('oops');
+    }
+  };
+
   return (
     <main>
       <div className="game-container">
@@ -52,6 +62,7 @@ const Main = () => {
           characters={characters}
           selectedCards={selectedCards}
           handleCardClick={handleCardClick}
+          addClickedImages={addClickedImages}
         />
       </div>
     </main>

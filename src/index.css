@@ -85,6 +85,7 @@ main {
   justify-content: center;
   align-items: center;
   max-width: 900px;
+  margin: 0px 10px;
 }
 .card {
   display: flex;
@@ -136,4 +137,10 @@ footer .contact-icons {
   box-shadow: none;
   transform: scale(0.98);
   transform: rotateZ(90deg);
+}
+
+@media screen and (max-width: 720px) {
+  .card {
+    min-width: 100%;
+  }
 }
