@@ -74,6 +74,11 @@ main {
   min-width: 100%;
   padding: 10px;
 }
+.red-text {
+  color: crimson;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
 .cards-list {
   background-color: hsla(173, 8%, 58%, 0.705);
   padding: 10px;

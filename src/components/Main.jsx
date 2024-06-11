@@ -23,6 +23,7 @@ const Main = () => {
     shuffleCards(characters);
     const selected = characters.slice(0, 6);
     setSelectedCards(selected);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -51,9 +52,9 @@ const Main = () => {
   };
 
   const handleUpdateHighScore = () => {
-    setHighScore((prevHighScore) => {
-      return score > prevHighScore ? score : prevHighScore;
-    });
+    if (score >= highScore) {
+      setHighScore((prevHighScore) => prevHighScore + 1);
+    }
   };
 
   const addClickedImages = (id) => {
@@ -74,13 +75,20 @@ const Main = () => {
 
   if (isLoading) {
     return (
-      <main>
+      <main
+        style={{
+          flexDirection: 'column',
+          backgroundColor: '#f5e1f385',
+        }}
+      >
+        <h1>Loading...</h1>
         <Spinner />;
       </main>
     );
   } else {
     return (
       <main>
+        <button onClick={handleUpdateHighScore}>click me</button>
         <div className="game-container">
           <ScoreDisplay
             score={score}
@@ -91,7 +99,6 @@ const Main = () => {
             selectedCards={selectedCards}
             addClickedImages={addClickedImages}
           />
-          <Spinner />
         </div>
       </main>
     );

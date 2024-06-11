@@ -6,7 +6,7 @@ const override = {
 };
 
 const Spinner = () => {
-  return <ClipLoader color="#4338ca" cssOverride={override} size={150} />;
+  return <ClipLoader color="#084246" cssOverride={override} size={150} />;
 };
 
 export default Spinner;
