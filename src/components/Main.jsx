@@ -11,6 +11,7 @@ const Main = () => {
   const [highScore, setHighScore] = useState(0);
   const [resultsMessage, setResultsMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const shuffleCards = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -66,8 +67,8 @@ const Main = () => {
         handleUpdateHighScore();
         return newClickedImages;
       } else {
-        setScore(0);
-        setResultsMessage('You Lost');
+        setResultsMessage('You Lost!');
+        setIsGameOver(true);
         return [];
       }
     });
@@ -83,6 +84,32 @@ const Main = () => {
       >
         <h1>Loading...</h1>
         <Spinner />;
+      </main>
+    );
+  } else if (isGameOver) {
+    return (
+      <main
+        style={{
+          flexDirection: 'column',
+          backgroundColor: '#f5e1f385',
+        }}
+      >
+        <h1>Game Over</h1>
+        <ScoreDisplay
+          score={score}
+          highScore={highScore}
+          resultsMessage={resultsMessage}
+        />
+        <button
+          onClick={() => {
+            setScore(0);
+            setResultsMessage('');
+            setIsGameOver(false);
+            setClickedImages([]);
+          }}
+        >
+          Restart Game
+        </button>
       </main>
     );
   } else {
