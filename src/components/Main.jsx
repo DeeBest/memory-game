@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CardsContainer from './CardsContainer';
 import ScoreDisplay from './ScoreDisplay';
+import Spinner from './Spinner';
 
 const Main = () => {
   const [characters, setCharacters] = useState([]);
@@ -71,21 +72,30 @@ const Main = () => {
     });
   };
 
-  return (
-    <main>
-      <div className="game-container">
-        <ScoreDisplay
-          score={score}
-          highScore={highScore}
-          resultsMessage={resultsMessage}
-        />
-        <CardsContainer
-          selectedCards={selectedCards}
-          addClickedImages={addClickedImages}
-        />
-      </div>
-    </main>
-  );
+  if (isLoading) {
+    return (
+      <main>
+        <Spinner />;
+      </main>
+    );
+  } else {
+    return (
+      <main>
+        <div className="game-container">
+          <ScoreDisplay
+            score={score}
+            highScore={highScore}
+            resultsMessage={resultsMessage}
+          />
+          <CardsContainer
+            selectedCards={selectedCards}
+            addClickedImages={addClickedImages}
+          />
+          <Spinner />
+        </div>
+      </main>
+    );
+  }
 };
 
 export default Main;
