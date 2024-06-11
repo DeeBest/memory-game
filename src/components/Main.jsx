@@ -94,7 +94,7 @@ const Main = () => {
           backgroundColor: '#f5e1f385',
         }}
       >
-        <h1>Game Over</h1>
+        <h1 className="red-text">Game Over</h1>
         <ScoreDisplay
           score={score}
           highScore={highScore}
@@ -115,7 +115,6 @@ const Main = () => {
   } else {
     return (
       <main>
-        <button onClick={handleUpdateHighScore}>click me</button>
         <div className="game-container">
           <ScoreDisplay
             score={score}
