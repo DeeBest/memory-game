@@ -8,6 +8,8 @@ const Main = () => {
   const [clickedImages, setClickedImages] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [resultsMessage, setResultsMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const shuffleCards = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -47,17 +49,23 @@ const Main = () => {
     setScore((prevScore) => prevScore + 1);
   };
 
+  const handleUpdateHighScore = () => {
+    setHighScore((prevHighScore) => {
+      return score > prevHighScore ? score : prevHighScore;
+    });
+  };
+
   const addClickedImages = (id) => {
     setClickedImages((prevClickedImages) => {
       if (!prevClickedImages.includes(id)) {
         const newClickedImages = [...prevClickedImages, id];
         displayRandomCards();
         handleScoreIncrease();
-        console.log(newClickedImages, score);
+        handleUpdateHighScore();
         return newClickedImages;
       } else {
-        console.log('oops');
         setScore(0);
+        setResultsMessage('You Lost');
         return [];
       }
     });
@@ -66,7 +74,11 @@ const Main = () => {
   return (
     <main>
       <div className="game-container">
-        <ScoreDisplay score={score} highScore={highScore} />
+        <ScoreDisplay
+          score={score}
+          highScore={highScore}
+          resultsMessage={resultsMessage}
+        />
         <CardsContainer
           selectedCards={selectedCards}
           addClickedImages={addClickedImages}

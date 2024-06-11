@@ -1,4 +1,4 @@
-const ScoreDisplay = ({ score, highScore }) => {
+const ScoreDisplay = ({ score, highScore, resultsMessage }) => {
   return (
     <div className="score-display-container">
       <div className="scores-display">
@@ -6,7 +6,7 @@ const ScoreDisplay = ({ score, highScore }) => {
         <span>Current Score: {score / 2}</span>
       </div>
       <div className="results-display">
-        <h3>You Win!</h3>
+        <h3>{resultsMessage}</h3>
       </div>
     </div>
   );
