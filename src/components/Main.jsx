@@ -9,7 +9,9 @@ const Main = () => {
   const [clickedImages, setClickedImages] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  const [resultsMessage, setResultsMessage] = useState('');
+  const [resultsMessage, setResultsMessage] = useState(
+    `Don't Click The Same Image Twice!!`
+  );
   const [isLoading, setIsLoading] = useState(true);
   const [isGameOver, setIsGameOver] = useState(false);
 
