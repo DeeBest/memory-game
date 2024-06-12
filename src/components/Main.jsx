@@ -105,7 +105,7 @@ const Main = () => {
         <button
           onClick={() => {
             setScore(0);
-            setResultsMessage('');
+            setResultsMessage(`Don't Click The Same Image Twice!!`);
             setIsGameOver(false);
             setClickedImages([]);
           }}
