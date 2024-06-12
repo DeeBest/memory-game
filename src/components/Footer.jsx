@@ -8,19 +8,19 @@ const Footer = () => {
       <div className="contact-icons">
         <FooterIcon
           link="mailto:simphiwedladla8@gmail.com"
-          imgPath="/icons/gmail.png"
+          imgPath="./icons/gmail.png"
           imgAltText="gmail-icon"
           imgClass="contact-icon"
         />
         <FooterIcon
           link="https://www.linkedin.com/in/dladla-simphiwe-89061a20a/"
-          imgPath="/icons/linkedin.png"
+          imgPath="./icons/linkedin.png"
           imgAltText="linkedin-icon"
           imgClass="contact-icon"
         />
         <FooterIcon
           link="https://github.com/DeeBest"
-          imgPath="/icons/github.webp"
+          imgPath="./icons/github.webp"
           imgAltText="github-icon"
           imgClass="contact-icon"
         />
